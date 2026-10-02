@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhit Borkar | Construction Project Manager</title>
+<meta name="description" content="Portfolio of Abhit Borkar, an Austin-based owner's representative and construction project manager delivering K-12, commercial, and infrastructure projects.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#16283D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abhit Borkar | Construction Project Manager">
+<meta property="og:description" content="Owner's representative and construction project manager delivering K-12, commercial, and infrastructure projects in Austin, Texas.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Abhit Borkar | Construction Project Manager">
+<meta name="twitter:description" content="Owner's representative and construction project manager delivering K-12, commercial, and infrastructure projects.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2316283D'/%3E%3Cpath d='M15 48 29 14h7l14 34h-9l-3-8H26l-3 8zm14-16h6l-3-9z' fill='%23FF7A30'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE8DA;
+    --paper-dark:#E2DBC7;
+    --paper-line: rgba(28,27,24,0.14);
+    --ink:#1C1B18;
+    --ink-soft:#4a4842;
+    --steel:#5B5A53;
+    --navy:#16283D;
+    --navy-light:#213D5B;
+    --navy-line: rgba(255,255,255,0.14);
+    --orange:#FF7A30;
+    --orange-deep:#913300;
+    --orange-glow: rgba(225,89,12,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; }
+  .display{ font-family:'Big Shoulders Display', sans-serif; text-transform:uppercase; }
+  a{ color:inherit; }
+  ::selection{ background:var(--orange); color:#fff; }
+
+  .skip-link{
+    position:fixed; top:6px; left:8px; z-index:1000;
+    padding:8px 12px; background:#fff; color:var(--navy);
+    font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600;
+    transform:translateY(-150%); transition:transform .15s ease;
+  }
+  .skip-link:focus{ transform:translateY(0); }
+
+  .grid-bg{
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+  .grid-bg-navy{
+    background-image:
+      linear-gradient(var(--navy-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--navy-line) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+
+  #progress{
+    position:fixed; top:38px; left:0; height:3px; width:0%;
+    background:linear-gradient(90deg, var(--orange), #ff8a4c);
+    z-index:101; transition:width .1s linear;
+    box-shadow:0 0 10px var(--orange-glow);
+  }
+
+  #sheet-nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center;
+    background:var(--ink); color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    height:38px;
+    border-bottom:1px solid rgba(233,227,209,0.2);
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:thin;
+    -webkit-overflow-scrolling:touch;
+  }
+  #sheet-nav .brand{
+    padding:0 14px; font-weight:600; color:var(--orange);
+    border-right:1px solid rgba(233,227,209,0.25);
+    height:100%; display:flex; align-items:center; flex-shrink:0;
+  }
+  #sheet-nav a{
+    padding:0 14px; height:100%; display:flex; align-items:center;
+    text-decoration:none; color:rgba(233,227,209,0.74);
+    border-right:1px solid rgba(233,227,209,0.1);
+    transition:color .15s ease, background .15s ease;
+    flex-shrink:0; position:relative;
+  }
+  #sheet-nav a:hover{ color:var(--paper); }
+  #sheet-nav a.active{ color:var(--paper); background:rgba(233,227,209,0.08); }
+  #sheet-nav a.active::before{ content:"▸ "; color:var(--orange); }
+
+  main{ padding-top:41px; }
+
+  section{ position:relative; padding:110px 24px; perspective:1400px; overflow:hidden; scroll-margin-top:41px; }
+  .wrap{ max-width:1080px; margin:0 auto; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    letter-spacing:0.14em; text-transform:uppercase;
+    display:flex; align-items:center; gap:10px; margin-bottom:18px;
+  }
+  .eyebrow::before{ content:""; width:26px; height:1px; background:currentColor; opacity:.5; }
+
+  .sheet-turn{
+    opacity:1;
+    transform:none;
+    will-change:transform, opacity;
+  }
+  .sheet-turn.reveal-pending{
+    opacity:0;
+    transform: translateY(70px) rotateX(8deg) scale(.96);
+    transform-origin:center bottom;
+    transition:opacity .9s cubic-bezier(.16,.9,.25,1), transform .9s cubic-bezier(.16,.9,.25,1);
+  }
+  .sheet-turn.reveal-pending.in{ opacity:1; transform:translateY(0) rotateX(0) scale(1); }
+
+  .stagger > *{
+    opacity:1; transform:none;
+  }
+  .stagger.reveal-pending > *{
+    opacity:0; transform:translateY(22px);
+    transition:opacity .7s cubic-bezier(.16,.9,.25,1), transform .7s cubic-bezier(.16,.9,.25,1);
+  }
+  .stagger.reveal-pending.in > *{ opacity:1; transform:translateY(0); }
+  .stagger.reveal-pending.in > *:nth-child(1){ transition-delay:.02s; }
+  .stagger.reveal-pending.in > *:nth-child(2){ transition-delay:.12s; }
+  .stagger.reveal-pending.in > *:nth-child(3){ transition-delay:.22s; }
+  .stagger.reveal-pending.in > *:nth-child(4){ transition-delay:.32s; }
+  .stagger.reveal-pending.in > *:nth-child(5){ transition-delay:.42s; }
+  .stagger.reveal-pending.in > *:nth-child(6){ transition-delay:.52s; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .sheet-turn.reveal-pending, .stagger.reveal-pending > *{ opacity:1 !important; transform:none !important; transition:none !important; }
+  }
+
+  #hero{
+    background:var(--navy); color:var(--paper);
+    min-height:100vh; padding-top:130px;
+    display:flex; flex-direction:column; justify-content:center;
+    border-bottom:6px solid var(--orange);
+  }
+  #hero .eyebrow{ color:var(--orange); }
+  #hero h1{ font-size:clamp(3.2rem, 9vw, 7.2rem); line-height:0.9; margin:0 0 22px 0; font-weight:800; }
+  #hero .role{ font-family:'IBM Plex Mono', monospace; font-size:clamp(1rem,2vw,1.25rem); color:var(--orange); margin:0 0 28px 0; font-weight:600; }
+  #hero .summary{ max-width:680px; font-size:1.05rem; line-height:1.65; color:rgba(233,227,209,0.9); margin:0 0 44px 0; }
+  #hero .summary strong{ color:var(--paper); font-weight:600; }
+
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:64px; }
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    letter-spacing:.05em; text-transform:uppercase; text-decoration:none;
+    padding:13px 22px; border:1px solid var(--orange); color:var(--paper);
+    display:inline-flex; align-items:center; gap:8px; border-radius:3px;
+    transition:transform .2s ease, box-shadow .2s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn.solid{ background:var(--orange); color:#fff; border-color:var(--orange); }
+  .btn.solid:hover{ background:var(--orange-deep); border-color:var(--orange-deep); transform:translateY(-2px); box-shadow:0 8px 20px var(--orange-glow); }
+  .btn:not(.solid):hover{ background:rgba(225,89,12,0.12); transform:translateY(-2px); }
+
+  .title-block{
+    border:1px solid var(--navy-line); border-radius:4px; overflow:hidden;
+    max-width:640px; font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+  }
+  .tb-row{ display:flex; }
+  .tb-cell{ flex:1; padding:9px 12px; border-right:1px solid var(--navy-line); border-top:1px solid var(--navy-line); }
+  .tb-cell:last-child{ border-right:none; }
+  .tb-row:first-child .tb-cell{ border-top:none; }
+  .tb-label{ display:block; color:rgba(233,227,209,0.75); font-size:10px; letter-spacing:.08em; margin-bottom:3px; }
+  .tb-value{ color:var(--paper); font-weight:500; }
+  .tb-value.orange{ color:var(--orange); }
+
+  .scroll-cue{
+    position:absolute; bottom:28px; left:24px;
+    display:flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px;
+    color:rgba(233,227,209,0.75); text-transform:uppercase; letter-spacing:.1em;
+  }
+  .scroll-cue .line{ width:1px; height:26px; background:rgba(233,227,209,0.35); position:relative; overflow:hidden; }
+  .scroll-cue .line::after{
+    content:""; position:absolute; top:-100%; left:0; width:100%; height:100%;
+    background:var(--orange); animation:cue 1.8s ease-in-out infinite;
+  }
+  @keyframes cue{ 0%{ top:-100%; } 60%{ top:100%; } 100%{ top:100%; } }
+
+  .sheet-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:60px; flex-wrap:wrap;
+    border-bottom:1px solid var(--paper-line); padding-bottom:22px;
+  }
+  .sheet-head h2{ font-size:clamp(2.1rem,4.4vw,3.4rem); margin:0; line-height:0.95; font-weight:800; }
+  .sheet-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--steel); text-align:right; }
+  .sheet-head.on-navy{ border-color:var(--navy-line); }
+  .sheet-head.on-navy .sheet-num{ color:rgba(233,227,209,0.55); }
+
+  #experience{ background:var(--paper); }
+
+  .role-card{
+    display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center;
+    padding:52px 0; border-bottom:1px solid var(--paper-line);
+  }
+  .role-card:first-of-type{ padding-top:0; }
+  .role-card.reverse .role-media{ order:2; }
+  .role-card.reverse .role-text{ order:1; }
+
+  /* ---------- photo carousel ---------- */
+  .role-media{
+    aspect-ratio:4/3; border-radius:6px; position:relative; overflow:hidden;
+    border:1.5px dashed rgba(28,27,24,0.28);
+    background:var(--paper-dark);
+  }
+  .role-media:hover{ border-color:var(--orange); }
+  .carousel-track{
+    display:flex; width:100%; height:100%;
+    transition:transform .45s cubic-bezier(.16,.9,.25,1);
+  }
+  .slide{
+    flex:0 0 100%; height:100%;
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;
+    background: repeating-linear-gradient(135deg, rgba(28,27,24,0.05) 0 2px, transparent 2px 14px);
+    padding:0 30px;
+  }
+  .slide .icon{ width:32px; height:32px; opacity:.5; }
+  .slide .ph-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--steel); text-transform:uppercase; letter-spacing:.08em; }
+  .slide .ph-sub{ font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--steel); max-width:80%; text-align:center; line-height:1.5; }
+  .car-counter{
+    position:absolute; top:10px; left:10px; font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px; color:var(--steel); background:rgba(237,232,218,0.7);
+    padding:3px 7px; border-radius:2px; letter-spacing:.05em; z-index:2;
+  }
+  .car-btn{
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:40px; height:40px; border-radius:50%;
+    background:rgba(237,232,218,0.75); border:1px solid rgba(28,27,24,0.2);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:16px; line-height:1; color:var(--ink-soft);
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+    z-index:2;
+  }
+  .car-btn:hover{ background:var(--orange); color:#fff; border-color:var(--orange); }
+  .car-btn.prev{ left:10px; }
+  .car-btn.next{ right:10px; }
+  .car-dots{ position:absolute; bottom:4px; left:0; right:0; display:flex; justify-content:center; gap:0; z-index:2; }
+  .dot{ width:32px; height:32px; border:0; padding:0; background:transparent; position:relative; cursor:pointer; }
+  .dot::before{ content:""; position:absolute; width:7px; height:7px; border-radius:50%; background:rgba(28,27,24,0.35); top:50%; left:50%; transform:translate(-50%,-50%); transition:background .2s ease, transform .2s ease; }
+  .dot.active::before{ background:var(--orange-deep); transform:translate(-50%,-50%) scale(1.35); }
+
+  .role-text .rev-tag{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .role-text .rev-num{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--orange-deep); font-weight:600; }
+  .role-text .rev-date{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--steel); }
+  .role-text h3{ margin:0 0 4px 0; font-size:1.5rem; font-weight:800; }
+  .role-text .org{ color:var(--orange-deep); font-weight:600; font-size:.95rem; margin-bottom:16px; display:block; }
+  .role-text p.narrative{ font-size:1rem; line-height:1.7; color:var(--ink-soft); margin:0 0 20px 0; }
+  .chip-row{ display:flex; gap:8px; flex-wrap:wrap; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; padding:6px 11px;
+    border:1px solid var(--paper-line); border-radius:20px; color:var(--ink-soft);
+    background:rgba(255,255,255,0.35);
+  }
+
+  @media (max-width:820px){
+    .role-card, .role-card.reverse{ grid-template-columns:1fr; gap:26px; }
+    .role-card.reverse .role-media, .role-card.reverse .role-text{ order:initial; }
+  }
+
+  .earlier-head{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:.1em; color:var(--steel); margin:56px 0 18px 0;
+  }
+  .earlier-list{ display:flex; flex-direction:column; }
+  .earlier-item{
+    display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    padding:16px 0; border-bottom:1px solid var(--paper-line); font-size:.94rem;
+  }
+  .earlier-item:last-child{ border-bottom:none; }
+  .earlier-role{ font-weight:600; }
+  .earlier-org{ color:var(--orange-deep); font-weight:500; margin-left:6px; }
+  .earlier-date{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--steel); white-space:nowrap; }
+
+  #projects{ background:var(--navy); color:var(--paper); }
+  #projects .sheet-head h2{ color:var(--paper); }
+  .proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--navy-line); border:1px solid var(--navy-line); border-radius:6px; overflow:hidden; }
+  .proj-card{
+    background:var(--navy); padding:34px 26px; min-height:220px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:background .25s ease;
+  }
+  .proj-card:hover{ background:var(--navy-light); }
+  .proj-num{ font-family:'Big Shoulders Display', sans-serif; font-weight:800; font-size:2.6rem; color:var(--orange); line-height:1; }
+  .proj-kicker{ margin:14px 0 6px; color:rgba(233,227,209,0.78); font-family:'IBM Plex Mono', monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+  .proj-card h3{ margin:0; font-size:1.08rem; line-height:1.35; }
+  .proj-card p.desc{ margin:12px 0 0 0; font-size:.9rem; color:rgba(233,227,209,0.82); line-height:1.58; }
+  .proj-outcome{ border-top:1px solid var(--navy-line); margin-top:22px; padding-top:14px; font-family:'IBM Plex Mono', monospace; font-size:.76rem; line-height:1.5; color:var(--orange); }
+  @media (max-width:860px){ .proj-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .proj-grid{ grid-template-columns:1fr; } }
+
+  #skills{ background:var(--paper); }
+  .legend-cols{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+  @media (max-width:760px){ .legend-cols{ grid-template-columns:1fr; gap:40px; } }
+  .legend-group h3{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--steel); margin:0 0 20px 0; font-weight:600; padding-bottom:10px; border-bottom:1px solid var(--paper-line);
+  }
+  .legend-list{ display:flex; flex-direction:column; }
+  .legend-item{ display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--paper-line); font-size:.98rem; transition:padding-left .2s ease, color .2s ease; }
+  .legend-item:hover{ padding-left:6px; color:var(--orange-deep); }
+  .legend-item:last-child{ border-bottom:none; }
+  .legend-mark{ width:11px; height:11px; border:1.5px solid var(--orange); flex-shrink:0; }
+  .legend-group.software .legend-mark{ border-radius:50%; background:var(--orange); border-color:var(--orange); }
+
+  #education{ background:var(--paper-dark); }
+  .edu-list{ display:flex; flex-direction:column; }
+  .edu-item{ display:grid; grid-template-columns:150px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--paper-line); }
+  .edu-item:last-child{ border-bottom:none; }
+  .edu-date{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--steel); padding-top:4px; }
+  .edu-item h3{ margin:0 0 6px 0; font-size:1.3rem; font-weight:700; }
+  .edu-item .school{ color:var(--orange-deep); font-weight:600; font-size:.95rem; }
+  .edu-item .honor{ margin-top:10px; font-size:.88rem; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace; }
+  .edu-item .honor::before{ content:"★ "; color:var(--orange); }
+  @media (max-width:560px){ .edu-item{ grid-template-columns:1fr; gap:6px; } }
+
+  #contact{ background:var(--navy); color:var(--paper); padding-bottom:0; }
+  #contact .sheet-head h2{ color:var(--paper); }
+  .contact-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:48px; margin-bottom:70px; }
+  @media (max-width:760px){ .contact-grid{ grid-template-columns:1fr; } }
+  #contact .summary{ font-size:1.15rem; line-height:1.6; color:rgba(233,227,209,0.9); max-width:520px; }
+  .contact-links{ display:flex; flex-direction:column; }
+  .contact-links a{
+    display:flex; justify-content:space-between; align-items:center; padding:16px 0;
+    border-bottom:1px solid var(--navy-line); text-decoration:none;
+    font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--paper);
+    transition:color .15s ease, padding-left .2s ease;
+  }
+  .contact-links a:hover{ color:var(--orange); padding-left:6px; }
+  .contact-links span.k{ color:rgba(233,227,209,0.75); font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; }
+
+  footer.tb-footer{
+    border-top:1px solid var(--navy-line); padding:18px 24px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:rgba(233,227,209,0.72);
+  }
+
+  :focus-visible{ outline:2px solid var(--paper); outline-offset:2px; box-shadow:0 0 0 4px var(--ink); }
+
+  @media (max-width:560px){
+    section{ padding:76px 18px; }
+    #hero{ min-height:100svh; padding-top:104px; padding-bottom:72px; }
+    #hero h1{ font-size:clamp(3.3rem,20vw,5.1rem); }
+    #sheet-nav .brand, #sheet-nav a{ padding-left:11px; padding-right:11px; }
+    .sheet-head{ margin-bottom:40px; }
+    .scroll-cue{ display:none; }
+    .tb-row{ flex-wrap:wrap; }
+    .tb-cell{ min-width:33%; }
+    .tb-row:first-child .tb-cell{ min-width:50%; }
+    .role-card{ padding:40px 0; }
+    .contact-links a{ align-items:flex-start; gap:14px; font-size:.82rem; }
+  }
+
+  @media print{
+    #sheet-nav, #progress, .scroll-cue, .car-btn, .car-dots{ display:none !important; }
+    main{ padding-top:0; }
+    section{ padding:36px 20px; break-inside:avoid; }
+    .sheet-turn, .stagger > *{ opacity:1 !important; transform:none !important; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhit Borkar",
+  "jobTitle": "Construction Project Manager and Owner's Representative",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "sameAs": ["https://www.linkedin.com/in/abhitborkar"],
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Texas A&M University"},
+    {"@type": "CollegeOrUniversity", "name": "Trine University"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav id="sheet-nav" class="mono" aria-label="Portfolio sections">
+  <span class="brand">AB / PORTFOLIO</span>
+  <a href="#hero" data-target="hero">T-001 COVER</a>
+  <a href="#experience" data-target="experience">A-101 EXPERIENCE</a>
+  <a href="#projects" data-target="projects">A-201 PROJECTS</a>
+  <a href="#skills" data-target="skills">A-301 SKILLS</a>
+  <a href="#education" data-target="education">A-401 EDUCATION</a>
+  <a href="#contact" data-target="contact">T-002 CONTACT</a>
+</nav>
+<div id="progress"></div>
+
+<main id="main-content" tabindex="-1">
+
+  <!-- HERO / COVER SHEET -->
+  <section id="hero" class="grid-bg-navy">
+    <div class="wrap">
+      <p class="eyebrow mono">T-001: COVER SHEET</p>
+      <h1 class="display">Abhit<br>Borkar</h1>
+      <p class="role">Owner's Representative &amp; Construction Project Manager</p>
+      <p class="summary">
+        I manage K-12 infrastructure and commercial renovation projects from proposal through closeout.
+        I currently oversee more than <strong>$100M</strong> in active Austin ISD construction within the district's
+        <strong>$2.45B</strong> Bond Program as Owner's Representative, following prior work closing out the
+        district's <strong>$1.05B</strong> Bond Program.
+        My background spans more than seven years in field engineering, project controls, and ownership representation,
+        supported by an MS in Construction Management from Texas A&amp;M University and an MBA in Project
+        Management currently in progress.
+      </p>
+      <div class="hero-actions">
+        <a class="btn solid" href="#experience">View Experience →</a>
+        <a class="btn" href="#contact">Get In Touch</a>
+        <a class="btn" href="mailto:abhit.borkar@gmail.com?subject=Resume%20Request">Request Résumé</a>
+      </div>
+      <div class="title-block">
+        <div class="tb-row">
+          <div class="tb-cell"><span class="tb-label">Project</span><span class="tb-value">Career Portfolio</span></div>
+          <div class="tb-cell"><span class="tb-label">Location</span><span class="tb-value">Austin, Texas</span></div>
+        </div>
+        <div class="tb-row">
+          <div class="tb-cell"><span class="tb-label">Drawn By</span><span class="tb-value">A. Borkar</span></div>
+          <div class="tb-cell"><span class="tb-label">Date</span><span class="tb-value">09.2026</span></div>
+          <div class="tb-cell"><span class="tb-label">Sheet</span><span class="tb-value orange">T-001</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="line"></span>Scroll</div>
+  </section>
+
+  <!-- A-101 EXPERIENCE -->
+  <section id="experience" class="grid-bg">
+    <div class="wrap">
+      <div class="sheet-head sheet-turn">
+        <h2 class="display">Experience</h2>
+        <div class="sheet-num">SHEET A-101<br>FIELD RECORD</div>
+      </div>
+
+      <div class="role-card sheet-turn">
+        <div class="role-media media-carousel" role="region" aria-roledescription="carousel" aria-label="Austin ISD active K-12 project photos">
+          <span class="car-counter mono" aria-live="polite">1 / 3</span>
+          <div class="carousel-track">
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">AISD campus under construction</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">OAC meeting walkthrough</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Site inspection</span>
+            </div>
+          </div>
+          <button class="car-btn prev" type="button" aria-label="Previous photo">‹</button>
+          <button class="car-btn next" type="button" aria-label="Next photo">›</button>
+          <div class="car-dots"></div>
+        </div>
+        <div class="role-text">
+          <div class="rev-tag"><span class="rev-num mono">06</span><span class="rev-date mono">Jul 2024 to Present · Current Role</span></div>
+          <h3>Project Manager, Owner's Representative</h3>
+          <span class="org">AECOM | Austin ISD K-12 Projects</span>
+          <p class="narrative">As Owner's Representative, I manage more than $100M in active K-12 construction
+          within Austin ISD's $2.45B 2022 Bond Program. My responsibilities include, but are not limited to,
+          negotiating GMPs and change orders, evaluating proposals and invoices for compliance, and coordinating
+          with design teams to validate construction progress against specifications.</p>
+          <div class="chip-row">
+            <span class="chip">$100M+ active</span>
+            <span class="chip">Owner's Representative</span>
+            <span class="chip">$2.45B 2022 Bond Program</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-card reverse sheet-turn">
+        <div class="role-media media-carousel" role="region" aria-roledescription="carousel" aria-label="Electronic Arts workplace renovation project photos">
+          <span class="car-counter mono" aria-live="polite">1 / 3</span>
+          <div class="carousel-track">
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Before and after workstation reconfiguration</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Acoustic pod installation</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Jobsite or project team</span>
+            </div>
+          </div>
+          <button class="car-btn prev" type="button" aria-label="Previous photo">‹</button>
+          <button class="car-btn next" type="button" aria-label="Next photo">›</button>
+          <div class="car-dots"></div>
+        </div>
+        <div class="role-text">
+          <div class="rev-tag"><span class="rev-num mono">05</span><span class="rev-date mono">Oct 2025 to Jan 2026</span></div>
+          <h3>Project Manager, Workplace Renovation</h3>
+          <span class="org">AECOM | Electronic Arts</span>
+          <p class="narrative">I managed full-cycle delivery of a $950K workplace renovation for Electronic
+          Arts, coordinating movers, furniture vendors, electricians, and low-voltage contractors to reconfigure
+          existing workstations and install acoustic pods. The project included power and data infrastructure
+          upgrades within an occupied facility. I also helped Electronic Arts finalize a $650K CRAC unit
+          replacement proposal.</p>
+          <div class="chip-row">
+            <span class="chip">$950K delivery</span>
+            <span class="chip">Occupied facility build-out</span>
+            <span class="chip">$650K proposal finalized</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-card sheet-turn">
+        <div class="role-media media-carousel" role="region" aria-roledescription="carousel" aria-label="Austin ISD capital project coordination photos">
+          <span class="car-counter mono" aria-live="polite">1 / 3</span>
+          <div class="carousel-track">
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Permit set or drawing markup</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Project team on site</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">City coordination meeting</span>
+            </div>
+          </div>
+          <button class="car-btn prev" type="button" aria-label="Previous photo">‹</button>
+          <button class="car-btn next" type="button" aria-label="Next photo">›</button>
+          <div class="car-dots"></div>
+        </div>
+        <div class="role-text">
+          <div class="rev-tag"><span class="rev-num mono">04</span><span class="rev-date mono">Sep 2023 to Jun 2024</span></div>
+          <h3>Assistant Project Manager</h3>
+          <span class="org">AECOM, K-12 Projects, Austin ISD</span>
+          <p class="narrative">I managed four concurrent capital projects totaling $200M within the district's
+          $2.45B Bond Program. This role involved coordinating with contractors, architects, and City of Austin
+          departments to support permitting, and leading weekly OAC meetings using Bluebeam Revu for design
+          review and alignment.</p>
+          <div class="chip-row">
+            <span class="chip">$200M across 4 projects</span>
+            <span class="chip">Weekly OAC meetings</span>
+            <span class="chip">Bluebeam markups</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-card reverse sheet-turn">
+        <div class="role-media media-carousel" role="region" aria-roledescription="carousel" aria-label="Austin ISD bond closeout project photos">
+          <span class="car-counter mono" aria-live="polite">1 / 3</span>
+          <div class="carousel-track">
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Closeout binder review</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Punch list walkthrough</span>
+            </div>
+            <div class="slide">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 7h3l2-2h6l2 2h3v13H4V7z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span class="ph-label mono">Add photo</span>
+              <span class="ph-sub">Program completion milestone</span>
+            </div>
+          </div>
+          <button class="car-btn prev" type="button" aria-label="Previous photo">‹</button>
+          <button class="car-btn next" type="button" aria-label="Next photo">›</button>
+          <div class="car-dots"></div>
+        </div>
+        <div class="role-text">
+          <div class="rev-tag"><span class="rev-num mono">03</span><span class="rev-date mono">May 2022 to Sep 2023</span></div>
+          <h3>Project Controls Specialist</h3>
+          <span class="org">AECOM</span>
+          <p class="narrative">I directed closeout operations for the $1.05B AISD Bond Program, achieving 100%
+          project completion within planned timelines. I developed a closeout tracking system that improved
+          reporting accuracy and reduced submission turnaround time by 25%.</p>
+          <div class="chip-row">
+            <span class="chip">$1.05B closed out</span>
+            <span class="chip">100% on time</span>
+            <span class="chip">25% faster turnaround</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="earlier-head sheet-turn">Earlier</p>
+      <div class="earlier-list sheet-turn">
+        <div class="earlier-item">
+          <div><span class="earlier-role">Project Management Intern</span><span class="earlier-org">AECOM</span></div>
+          <div class="earlier-date mono">Jun 2021 to Aug 2021</div>
+        </div>
+        <div class="earlier-item">
+          <div><span class="earlier-role">Graduate Teaching Assistant</span><span class="earlier-org">Texas A&amp;M University</span></div>
+          <div class="earlier-date mono">Nov 2020 to May 2022</div>
+        </div>
+        <div class="earlier-item">
+          <div><span class="earlier-role">Junior Engineer</span><span class="earlier-org">Rohan Builders</span></div>
+          <div class="earlier-date mono">Sep 2017 to May 2020</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-201 PROJECTS -->
+  <section id="projects" class="grid-bg-navy">
+    <div class="wrap">
+      <div class="sheet-head on-navy sheet-turn">
+        <h2 class="display">Selected Project Experience</h2>
+        <div class="sheet-num">SHEET A-201<br>PROJECT RECORDS</div>
+      </div>
+
+      <div class="proj-grid sheet-turn">
+        <article class="proj-card">
+          <div>
+            <span class="proj-num display">$100M+</span>
+            <p class="proj-kicker">Owner's Representative · Active</p>
+            <h3>Austin ISD 2022 Bond Program</h3>
+            <p class="desc">Managing more than $100M in active K-12 construction within Austin ISD's $2.45B 2022 Bond Program through GMP and change-order negotiations, proposal and invoice review, and design-team coordination.</p>
+          </div>
+          <div class="proj-outcome">Focus · Cost, scope, compliance, and progress validation</div>
+        </article>
+        <article class="proj-card">
+          <div>
+            <span class="proj-num display">$1.05B</span>
+            <p class="proj-kicker">Project Controls · Completed</p>
+            <h3>2017 AISD Bond Program Closeout</h3>
+            <p class="desc">Directed program closeout and built a tracking system that improved reporting accuracy while creating a clearer path from outstanding documentation to final completion.</p>
+          </div>
+          <div class="proj-outcome">Result · 100% completion; 25% faster submission turnaround</div>
+        </article>
+        <article class="proj-card">
+          <div>
+            <span class="proj-num display">$950K</span>
+            <p class="proj-kicker">Project Manager · Completed</p>
+            <h3>Electronic Arts Workplace Renovation</h3>
+            <p class="desc">Coordinated movers, furniture vendors, electricians, and low-voltage contractors for an occupied-office reconfiguration, including power, data, and acoustic-pod installation.</p>
+          </div>
+          <div class="proj-outcome">Contribution · Helped EA finalize a $650K CRAC unit replacement proposal</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-301 SKILLS -->
+  <section id="skills" class="grid-bg">
+    <div class="wrap">
+      <div class="sheet-head sheet-turn">
+        <h2 class="display">Skills &amp; Systems</h2>
+        <div class="sheet-num">SHEET A-301<br>LEGEND</div>
+      </div>
+
+      <div class="legend-cols sheet-turn">
+        <div class="legend-group">
+          <h3 class="mono">Core Practice</h3>
+          <div class="legend-list">
+            <div class="legend-item"><span class="legend-mark"></span>Field Engineering</div>
+            <div class="legend-item"><span class="legend-mark"></span>Cost Estimation &amp; Billing</div>
+            <div class="legend-item"><span class="legend-mark"></span>Scheduling</div>
+            <div class="legend-item"><span class="legend-mark"></span>Quantity Takeoff</div>
+            <div class="legend-item"><span class="legend-mark"></span>Labor Management</div>
+            <div class="legend-item"><span class="legend-mark"></span>Safety Hazard Analysis</div>
+            <div class="legend-item"><span class="legend-mark"></span>Quality Control (QA/QC)</div>
+            <div class="legend-item"><span class="legend-mark"></span>Material Inventory &amp; Procurement</div>
+            <div class="legend-item"><span class="legend-mark"></span>Documentation &amp; Compliance</div>
+          </div>
+        </div>
+        <div class="legend-group software">
+          <h3 class="mono">Software &amp; Systems</h3>
+          <div class="legend-list">
+            <div class="legend-item"><span class="legend-mark"></span>AutoCAD</div>
+            <div class="legend-item"><span class="legend-mark"></span>Bluebeam Revu</div>
+            <div class="legend-item"><span class="legend-mark"></span>Procore</div>
+            <div class="legend-item"><span class="legend-mark"></span>Primavera P6</div>
+            <div class="legend-item"><span class="legend-mark"></span>On Screen Takeoff</div>
+            <div class="legend-item"><span class="legend-mark"></span>MS Office</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A-401 EDUCATION -->
+  <section id="education" class="grid-bg">
+    <div class="wrap">
+      <div class="sheet-head sheet-turn">
+        <h2 class="display">Education</h2>
+        <div class="sheet-num">SHEET A-401<br>CREDENTIALS</div>
+      </div>
+
+      <div class="edu-list sheet-turn">
+        <div class="edu-item">
+          <div class="edu-date mono">Jun 2025 to Dec 2026</div>
+          <div><h3>Master of Business Administration — Project Management</h3><div class="school">Trine University, Indiana</div></div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-date mono">Aug 2020 to May 2022</div>
+          <div><h3>Master of Science in Construction Management</h3><div class="school">Texas A&amp;M University, College Station</div><div class="honor">MS Construction Management Program Scholarship, 2020 to 2022</div></div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-date mono">Jul 2013 to May 2017</div>
+          <div><h3>Bachelor of Engineering in Civil Engineering</h3><div class="school">Pimpri Chinchwad College of Engineering</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T-002 CONTACT -->
+  <section id="contact" class="grid-bg-navy">
+    <div class="wrap">
+      <div class="sheet-head on-navy sheet-turn">
+        <h2 class="display">Contact</h2>
+        <div class="sheet-num">SHEET T-002<br>CLOSEOUT</div>
+      </div>
+
+      <div class="contact-grid sheet-turn">
+        <p class="summary">Based in Austin, Texas, I welcome thoughtful conversations with fellow professionals
+        across K-12, commercial, and infrastructure delivery. If our work or interests intersect, I look forward
+        to connecting.</p>
+        <div class="contact-links">
+          <a href="mailto:abhit.borkar@gmail.com"><span class="k">Email</span> abhit.borkar@gmail.com</a>
+          <a href="https://www.linkedin.com/in/abhitborkar" target="_blank" rel="noopener noreferrer"><span class="k">LinkedIn</span> /in/abhitborkar ↗</a>
+        </div>
+      </div>
+    </div>
+    <footer class="tb-footer">
+      <span>ABHIT BORKAR / CAREER PORTFOLIO</span>
+      <span>SHEET T-002 OF T-002 · REV 2026.09</span>
+    </footer>
+  </section>
+
+</main>
+
+<script>
+  // scroll-spy for sheet nav
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('#sheet-nav a');
+  const supportsIntersectionObserver = 'IntersectionObserver' in window;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const setActive = (id) => navLinks.forEach(link => {
+    const isActive = link.dataset.target === id;
+    link.classList.toggle('active', isActive);
+    if (isActive) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+
+  if (supportsIntersectionObserver){
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(section => spy.observe(section));
+  }
+  setActive('hero');
+
+  // Progressive enhancement: content remains visible if animation support is unavailable.
+  document.querySelectorAll('.legend-list, .earlier-list').forEach(el => el.classList.add('stagger'));
+  if (supportsIntersectionObserver && !reduceMotion){
+    const turnItems = document.querySelectorAll('.sheet-turn');
+    turnItems.forEach(el => el.classList.add('reveal-pending'));
+    const turn = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          turn.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    turnItems.forEach(el => turn.observe(el));
+
+    const staggerItems = document.querySelectorAll('.stagger');
+    staggerItems.forEach(el => el.classList.add('reveal-pending'));
+    const stagger = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          stagger.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    staggerItems.forEach(el => stagger.observe(el));
+  }
+
+  // scroll progress bar
+  const bar = document.getElementById('progress');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const scrollable = h.scrollHeight - h.clientHeight;
+    const pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    bar.style.width = pct + '%';
+  };
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // photo carousels (multiple images per role, arrow + dot navigation)
+  document.querySelectorAll('.media-carousel').forEach((car, carouselIndex) => {
+    const track = car.querySelector('.carousel-track');
+    const slides = car.querySelectorAll('.slide');
+    const counter = car.querySelector('.car-counter');
+    const dotsWrap = car.querySelector('.car-dots');
+    const prevBtn = car.querySelector('.car-btn.prev');
+    const nextBtn = car.querySelector('.car-btn.next');
+    let index = 0;
+    const trackId = `carousel-track-${carouselIndex + 1}`;
+    track.id = trackId;
+    prevBtn.setAttribute('aria-controls', trackId);
+    nextBtn.setAttribute('aria-controls', trackId);
+
+    slides.forEach((slide, i) => {
+      const slideId = `carousel-${carouselIndex + 1}-slide-${i + 1}`;
+      slide.id = slideId;
+      slide.setAttribute('role', 'group');
+      slide.setAttribute('aria-roledescription', 'slide');
+      slide.setAttribute('aria-label', `${i + 1} of ${slides.length}`);
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Show photo ${i + 1} of ${slides.length}`);
+      dot.setAttribute('aria-controls', slideId);
+      dot.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = car.querySelectorAll('.dot');
+
+    function go(i){
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      slides.forEach((slide, slideIndex) => slide.setAttribute('aria-hidden', String(slideIndex !== index)));
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === index;
+        dot.classList.toggle('active', isActive);
+        if (isActive) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+      counter.textContent = `${index + 1} / ${slides.length}`;
+    }
+    prevBtn.addEventListener('click', () => go(index - 1));
+    nextBtn.addEventListener('click', () => go(index + 1));
+    go(0);
+  });
+</script>
+
+</body>
+</html>
